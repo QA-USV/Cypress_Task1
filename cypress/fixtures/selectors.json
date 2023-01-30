@@ -1,0 +1,16 @@
+{
+    "baseUrl": "http://qamid.tmweb.ru",
+    "urlAdm": "http://qamid.tmweb.ru/admin",
+    "admin": {
+      "email": "qamid@qamid.ru",
+      "password": "qamid"
+    },
+    "fakeAdmin": {
+        "email": "qamid@qamid.com",
+        "password": "qamiddd"
+    },
+    "dayToGo": ".page-nav__day",
+    "header": ".page-header__title",
+    "mainPage": "main",
+    "movie": ".movie"
+}

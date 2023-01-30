@@ -10,13 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "cypress": "^12.4.0",
-    "eslint": "^8.32.0",
+    "eslint": "^8.33.0",
     "mocha": "^10.2.0",
     "prettier": "^2.8.3",
     "react-autosuggest": "^10.1.0"
   },
   "devDependencies": {
-    "cypress-dark": "^1.1.0",
+    "cypress-dark": "^1.8.3",
     "cypress-eslint-preprocessor": "^1.2.2",
     "eslint-plugin-cypress": "^2.12.1"
   }
