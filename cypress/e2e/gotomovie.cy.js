@@ -1,8 +1,7 @@
 const { describe } = require("mocha")
 const seats = require('../fixtures/seats.json')
 import { 
-  baseUrl, urlAdm, admin, fakeAdmin, 
-  header, dayToGo, mainPage 
+  baseUrl, header, dayToGo, mainPage 
 } from '../fixtures/selectors.json'
 
 //Tests for user's page
@@ -53,23 +52,3 @@ describe('go to movie tests', () => {
     cy.get('.acceptin-button').contains('Забронировать').should('be.disabled')
   });
 });
-
-//Tests for admin page 
-
-describe('admin tests', () => {
-  beforeEach (() => {
-    cy.visit(urlAdm)
-  })
-      
-  it('should logins as admin', () => {
-    cy.loginAdmin(admin)
-    cy.get('.page-header__subtitle')
-      .contains('Администраторррская')
-  })
-
-  it('should not logins if fakeAdmin', () => {
-    cy.loginAdmin(fakeAdmin)
-    cy.get('body')
-      .contains('Ошибка авторизации!')
-  })
-})                   

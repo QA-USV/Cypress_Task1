@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:admin": "cypress run --record --key 11916a9e-9912-4ec0-9d09-8cead99d4160 --ci-build-id=5 --group admin --spec 'cypress/e2e/adminmovie.cy.js'",
-    "test:user": "cypress run --record --key 11916a9e-9912-4ec0-9d09-8cead99d4160 --ci-build-id=5 --group user --spec 'cypress/e2e/gotomovie.cy.js'"
+    "test:admin": "cypress run --record --ci-build-id=13 --group admin --spec 'cypress/e2e/adminmovie.cy.js'",
+    "test:user": "cypress run --record --ci-build-id=13 --group user --spec 'cypress/e2e/gotomovie.cy.js'",
+    "test:parallel": "run-p -c test:admin test:user"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "cypress-dark": "^1.8.3",
     "cypress-eslint-preprocessor": "^1.2.2",
-    "eslint-plugin-cypress": "^2.12.1"
+    "eslint-plugin-cypress": "^2.12.1",
+    "npm-run-all": "^4.1.5"
   }
 }
