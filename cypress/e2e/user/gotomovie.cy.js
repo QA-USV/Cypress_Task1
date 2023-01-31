@@ -1,8 +1,8 @@
 const { describe } = require("mocha")
-const seats = require('../fixtures/seats.json')
+const seats = require('../../fixtures/seats.json')
 import { 
   baseUrl, header, dayToGo, mainPage 
-} from '../fixtures/selectors.json'
+} from '../../fixtures/selectors.json'
 
 //Tests for user's page
 

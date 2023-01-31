@@ -1,8 +1,8 @@
 const { describe } = require("mocha")
-const seats = require('../fixtures/seats.json')
+const seats = require('../../fixtures/seats.json')
 import { 
   urlAdm, admin, fakeAdmin 
-} from '../fixtures/selectors.json'
+} from '../../fixtures/selectors.json'
 
 //Tests for admin page 
 

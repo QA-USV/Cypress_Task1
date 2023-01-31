@@ -4,9 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:admin": "cypress run --record --ci-build-id=13 --group admin --spec 'cypress/e2e/adminmovie.cy.js'",
-    "test:user": "cypress run --record --ci-build-id=13 --group user --spec 'cypress/e2e/gotomovie.cy.js'",
-    "test:parallel": "run-p -c test:admin test:user"
+    "cy:admin:chrome": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group admin --spec 'cypress/e2e/admin/adminmovie.cy.js' -b chrome",
+    "cy:admin:electron": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group admin --spec 'cypress/e2e/admin/adminmovie.cy.js' -b electron",
+    "cy:admin:edge": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group admin --spec 'cypress/e2e/admin/adminmovie.cy.js' -b edge",
+    
+    "cy:user:chrome": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group user --spec 'cypress/e2e/user/gotomovie.cy.js' -b chrome",
+    "cy:user:electron": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group user --spec 'cypress/e2e/user/gotomovie.cy.js' -b electron",
+    "cy:user:edge": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group user --spec 'cypress/e2e/user/gotomovie.cy.js' -b edge",
+    
+    "cy:admingroup:chrome": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group admin --spec 'cypress/e2e/admin/**/*' -b chrome",
+    "cy:admingroup:electron": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group admin --spec 'cypress/e2e/admin/**/*' -b electron",
+    "cy:admingroup:edge": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group admin --spec 'cypress/e2e/admin/**/*' -b edge",
+    
+    "cy:usergroup:chrome": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group user --spec 'cypress/e2e/user/**/*' -b chrome",
+    "cy:usergroup:electron": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group user --spec 'cypress/e2e/user/**/*' -b electron",
+    "cy:usergroup:edge": "cypress run -c --record --key af5cdace-fa7f-4982-adc1-19c9385b12ec --group user --spec 'cypress/e2e/user/**/*' -b edge",
+    
+    "cy:parallel:chrome": "npm run cy:admingroup:chrome & npm run cy:usergroup:chrome",
+    "cy:parallel:electron": "npm run cy:admingroup:electron & npm run cy:usergroup:electron",
+    "cy:parallel:edge": "npm run cy:admingroup:edge & npm run cy:usergroup:edge",
+    "cy:parallel:chrome-electron": "npm run cy:admingroup:chrome & npm run cy:usergroup:electron",
+    "cy:parallel:chrome-edge": "npm run cy:admingroup:chrome & npm run cy:usergroup:edge",
+    "cy:parallel:electron-chrome": "npm run cy:admingroup:electron & npm run cy:usergroup:chrome",
+    "cy:parallel:electron-edge": "npm run cy:admingroup:electron & npm run cy:usergroup:edge",
+    "cy:parallel:edge-chrome": "npm run cy:admingroup:edge & npm run cy:usergroup:chrome",
+    "cy:parallel:edge-electron": "npm run cy:admingroup:edge & npm run cy:usergroup:electron"
   },
   "author": "",
   "license": "ISC",
